@@ -31,7 +31,7 @@ class WeldingSymbol_prototype:
         V = getDrawingPageGUIVars()
         d.activate(V, dialogTitle='Add Welding Note', dialogIconPath=self.generateIcon(), endFunction=self.Activated )
         d.proxy_svgFun = Command_svg_fun_wrapper(self)
-        from grabPointAdd import  Proxy_grabPoint
+        from .grabPointAdd import  Proxy_grabPoint
         selectionOverlay.generateSelectionGraphicsItems( 
             dimensionableObjects( V.page ) + [obj for obj in V.page.Group if hasattr(obj,'Proxy') and isinstance( obj.Proxy, Proxy_grabPoint) ],
             self.selectFun ,
